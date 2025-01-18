@@ -1,0 +1,21 @@
+package br.com.alura.forum.service
+
+import br.com.alura.forum.model.Usuario
+import org.springframework.stereotype.Service
+
+@Service
+class UsuarioService (final var usuarios: List<Usuario>) {
+    init {
+        val usuario = Usuario (
+            id = 1,
+            nome = "Ana da Silva",
+            email = "ana@email.com.br"
+        )
+
+        usuarios = listOf(usuario)
+    }
+
+    fun buscarPorId(id: Long) : Usuario {
+        return usuarios.first()
+    }
+}
