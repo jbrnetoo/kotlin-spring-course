@@ -54,3 +54,5 @@ out/
 
 ### Git merge file ###
 *.orig
+
+.DS_Store
