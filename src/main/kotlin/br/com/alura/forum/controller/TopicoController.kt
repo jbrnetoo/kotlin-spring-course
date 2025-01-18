@@ -1,5 +1,6 @@
 package br.com.alura.forum.controller
 
+import br.com.alura.forum.dto.AtualizacaoTopicoDto
 import br.com.alura.forum.dto.NovoTopicoDto
 import br.com.alura.forum.dto.TopicoView
 import br.com.alura.forum.service.TopicoService
@@ -23,5 +24,15 @@ class TopicoController(private val service: TopicoService) {
     @PostMapping
     fun cadastrar(@RequestBody @Valid dto: NovoTopicoDto) {
         service.cadastrar(dto)
+    }
+
+    @PutMapping
+    fun atualizar(@RequestBody @Valid dto: AtualizacaoTopicoDto){
+        service.atualizar(dto)
+    }
+
+    @DeleteMapping("{id}")
+    fun deletar(@PathVariable id: Long) {
+        service.deletar(id)
     }
 }
