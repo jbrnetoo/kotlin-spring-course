@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/forum
+    username: boms
+    password: boms
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update # É necessário para criar as tabelas automaticamente
+    properties:
+        hibernate:
+          dialect: org.hibernate.dialect.PostgreSQLDialect
